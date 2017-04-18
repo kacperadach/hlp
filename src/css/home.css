@@ -7,20 +7,22 @@ body, html {
 }
 
 .main-home-image {
-	position: relative;
-	width: 100%;
-	height: 100%;
+	position: fixed;
+	width: 3000px;
+	height: 2000px;
 	background-image: url('../images/1_Front.jpg');
-	background-size: 100% auto;
-	/*animation: panning 10s infinite linear;*/
+	background-size: cover;
+	animation: panning 10s infinite linear;
 }
 
 @keyframes panning {
 	0% {
-		background-position: 0% 0%;
+		transform: translate3d(-300px, -600px, 0);
+		animation-timing-function: ease-in;
 	}
 	100% {
-		background-position: 0% 100%;
+		transform: scale3d(0.8, 0.8, 0.8) translate3d(-600px, -400px, 0);
+		animation-timing-function: ease-in;
 	}
 }
 
@@ -63,6 +65,7 @@ body, html {
 .main-home-container {
 	/*background-color: rgba(0,0,0,0.5);*/
 	height: 100%;
+	position: relative;
 }
 
 .main-top-container {
