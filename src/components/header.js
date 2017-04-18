@@ -8,8 +8,15 @@ const Header = React.createClass({
 	render() {
 		return (
 			<div className="App-header">
-         <img src={camera} className="App-logo" alt="logo" />
-         <img src={logo} className="hlp-logo" alt="hlp-logo"/>
+				<div className="app-header-div">
+					<div className="camera-logo-div">
+	         <img src={camera} className="camera-logo" alt="logo" />
+	        </div>
+	        <div className="hlp-logo-div">
+	         <img src={logo} className="hlp-logo" alt="hlp-logo"/>
+	         test
+	        </div>
+	      </div>
        </div>
 		);
 	}

@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
 }
 
 .App-logo {
@@ -14,28 +19,61 @@
 .home-main-photo {
   position: absolute;
   opacity: 1;
-  transition: opacity 0.5s linear;
+  transition: opacity 1.25s cubic-bezier(1, 0.26, 1, 1);
 }
 
 .hidden {
   opacity: 0;
 }
 
+.main-div {
+  width: 100%;
+  height: 1000px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 0px;
+}
+
 .main-images {
+  width: 960px;
+  padding: 20px;
+  height: 560px;
+}
+
+.image-container {
   position: relative;
-  height: 400px;
-  width: 600px;
+  width: 870px;
+}
+
+@keyframes image-transition {
+ from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .main-images img {
   width:100%;
+  left: 5%;
+}
+
+.camera-logo-div {
+  padding: 20px;
+}
+
+.app-header-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 285px;
 }
 
 .App-header {
   #background-color: #e9a825;
-  height: 80px;
-  padding: 20px;
+  height: 100px;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
 
 .App-intro {

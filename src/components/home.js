@@ -1,62 +1,33 @@
 import React from 'react';
-import Lightroom from 'react-images';
-import FrontHouse from '../images/1_Front.jpg';
-import LivingRoom from '../images/4_Living_Room.jpg';
-import DiningRoom from '../images/8_Dining_Room.jpg';
-
-const link = 'http://www.homelistingphotography.com/wp-content/uploads/2012/07/2-front.jpg';
-
-const imageArray = [FrontHouse, LivingRoom, DiningRoom];
-
-const imageRotationInterval = 5000;
+import '../css/home.css';
+import { Glyphicon } from 'react-bootstrap';
 
 const Home = React.createClass({
 
-	getInitialState() {
-		return {
-			lightroomOpen: false,
-			currentImage: 0,
-			previousImage: imageArray.length-1
-		};
-	},
-
-	changeImage() {
-		if (this.state.currentImage === imageArray.length - 1) {
-			this.setState({currentImage: 0, previousImage: imageArray.length-1});
-		} else {
-			this.setState({currentImage: this.state.currentImage+1, previousImage: this.state.currentImage});
-		}
-		setTimeout(this.changeImage, imageRotationInterval);
-	},
-
-	componentWillMount() {
-		setTimeout(this.changeImage, imageRotationInterval);
-	},
-
-	openLightRoom() {
-		this.setState({lightroomOpen: true});
-	},
-
 	render() {
-
-		const {
-			lightroomOpen,
-			currentImage,
-			previousImage
-		} = this.state;
-
 		return (
-			<div className="main-div">
-				<div className="main-images">
-					{imageArray.map((i, key) => {
-						let cn = "home-main-photo";
-						if (key !== currentImage) {
-							cn += " hidden"
-						}
-						return (
-							<img key={key} src={i} className={cn} onClick={this.openLightRoom} />
-						);
-					})}
+			<div className="main-home">
+				<div className="main-home-image">
+					<div className="main-home-container">
+						<div className="main-top-container">
+							<div className="home-logo-div">
+								<h1><strong>H</strong>ome <strong>L</strong>isting <strong>P</strong>hotography</h1>
+							</div>
+							<div className="home-menu-div">
+								<button>Home</button>
+								<button>Gallery</button>
+								<button>Contact</button>
+							</div>
+						</div>
+						<div className="main-body-container">
+							<div className="main-body">
+								<h2>We deliver the Highest Quality Professional Real Estate Photography</h2>
+							</div>
+							<div className="main-body-button-div">
+								<button>Checkout Our Portfolio <Glyphicon glyph="home"/></button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		);
