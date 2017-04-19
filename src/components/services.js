@@ -1,8 +1,10 @@
 import React from 'react';
 import Header from './header';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Tab, Row, Col, Nav, NavItem, Glyphicon } from 'react-bootstrap';
 import '../css/services.css';
+import FloorPlanImage from '../images/branded_floor_plan.jpg'
+import { Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 const Services = React.createClass({
 	render() {
@@ -10,43 +12,35 @@ const Services = React.createClass({
 			<div className="main-home-container">
 				<Header />
 				<div className="main-services-div">
-					<Tab.Container id="left-tabs" defaultActiveKey="first">
-				    <Row className="clearfix">
-				      <Col sm={4}>
-				        <Nav bsStyle="pills" stacked>
-				          <NavItem eventKey="first">
-				            <Glyphicon glyph="camera"/><p>Real Estate Photography</p>
-				          </NavItem>
-				          <NavItem eventKey="second">
-				            <Glyphicon glyph="home"/><p>Property Floor Plans</p>
-				          </NavItem>
-				          <NavItem eventKey="third">
-				            <Glyphicon glyph="facetime-video"/><p>Real Estate Videos</p>
-				          </NavItem>
-				          <NavItem eventKey="fourth">
-				            <Glyphicon glyph="apple"/><p>Individual Property Websites</p>
-				          </NavItem>
-				        </Nav>
-				      </Col>
-				      <Col sm={3}>
-				        <Tab.Content animation>
-				          <Tab.Pane eventKey="first">
-				            Tab 1 content
-				          </Tab.Pane>
-				          <Tab.Pane eventKey="second">
-				            Tab 2 content
-				          </Tab.Pane>
-				          <Tab.Pane eventKey="third">
-				            Tab 3 content
-				          </Tab.Pane>
-				          <Tab.Pane eventKey="fourth">
-				            Tab 4 content
-				          </Tab.Pane>
-				        </Tab.Content>
-				      </Col>
-				    </Row>
-				  </Tab.Container>
-				 </div>
+					<div className="top-row">
+						<Link to="/services/photography">
+							<div className="service-background">
+								<p>Photography</p>
+								<div className="service photography"></div>
+							</div>
+						</Link>
+						<Link to="/services/videos">
+							<div className="service-background">
+								<p>Videos</p>
+								<div className="service videos"></div>
+							</div>
+						</Link>
+					</div>
+					<div className="bottom-row">
+						<Link to="/services/floor-plan">
+							<div className="service-background">
+								<p>Floor Plans</p>
+								<div className="service floor-plan"></div>
+							</div>
+						</Link>
+						<Link to="/services/websites">
+							<div className="service-background">
+								<p>Property Websites</p>
+								<div className="service websites"></div>
+							</div>
+						</Link>
+					</div>
+				</div>
 			</div>
 		);
 	}

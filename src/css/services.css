@@ -8,6 +8,63 @@
 	align-items: center;
 }
 
+.service {
+	width: 600px;
+	height: 400px;
+	position: absolute;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.service:hover {
+	opacity: 0.15;
+}
+
+.service-background {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 600px;
+	height: 400px;
+	margin: 40px;
+	background-color: black;
+}
+
+.main-services-div a {
+	text-decoration: none;
+}
+
+.service-background p {
+	background-color: black;
+	opacity: 1;
+	color: white;
+    font-size: 36px;
+    font-family: "hlp-font";
+    text-decoration: none;
+}
+
+
+.service.photography {
+	background-image: url('../images/8_Dining_Room.jpg');
+	background-size: 600px 400px;
+	z-index: 9999999;
+}
+
+.service.floor-plan {
+	background-image: url('../images/branded_floor_plan.jpg');
+	background-size: 600px 400px;
+}
+
+.service.videos {
+	background-image: url('../images/youtube-thumbnail.PNG');
+	background-size: 600px 400px;
+}
+
+.service.websites {
+	background-image: url('../images/youtube-thumbnail.PNG');
+	background-size: 600px 400px;
+}
+
+
 #left-tabs {
 	width: 1500px;
 }
