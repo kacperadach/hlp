@@ -8,6 +8,34 @@
 	align-items: center;
 }
 
+.services-header {
+	font-family: "hlp-font";
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    margin: 20px;
+}
+
+.services-header p {
+	color: white;
+	margin: 0;
+	background-color: rgba(0,0,0,0.7);
+	padding: 20px;
+	text-align: center;
+	cursor: default;
+	display: inline;
+	animation: 5s ease-out 0s 1 slideInFromBottom;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .service {
 	width: 600px;
 	height: 400px;
@@ -25,7 +53,9 @@
 	align-items: center;
 	width: 600px;
 	height: 400px;
-	margin: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 40px;
 	background-color: black;
 }
 

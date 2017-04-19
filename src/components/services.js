@@ -11,6 +11,9 @@ const Services = React.createClass({
 		return (
 			<div className="main-home-container">
 				<Header />
+				<div className="services-header">
+					<p>Our Services Include...</p>
+				</div>
 				<div className="main-services-div">
 					<div className="top-row">
 						<Link to="/services/photography">
