@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-//import 'bootstrap/dist/css/bootstrap.css';
 import Header from './components/header';
-import ImageGallery from './components/imageGallery';
+import Gallery from './components/imageGallery';
 import Home from './components/home';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
+
   render() {
     return (
-      <div className="App">
-        <Home/>
-      </div>
+	  	<Router>
+	  		<div>
+		  		<Route exact path="/" component={Home}/>
+		  		<Route path="/gallery" component={Gallery}/>
+		  	</div>
+	  	</Router>
     );
   }
 }

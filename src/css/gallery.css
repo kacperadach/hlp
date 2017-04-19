@@ -1,0 +1,47 @@
+.image-gallery-div {
+	width: 1000px;
+	left: 30%;
+	top: 200px;
+	margin: auto;
+    padding: 10px;
+}
+
+.image-gallery-header {
+	font-family: 'hlp-font';
+	font-size: 24px;
+}
+
+.image-gallery-header p {
+	color: white;
+	margin: 0;
+	background-color: rgba(0,0,0,0.7);
+	padding: 20px;
+	text-align: center;
+	cursor: default;
+	animation: 0.5s ease-out 0s 1 slideInFromLeft;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+@font-face {
+	font-family: 'hlp-font';
+	src: local('hlp-font'), url(../fonts/hlp-font.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'hlp-font-ultrablack';
+	src: local('hlp-font-ultrablack'), url(../fonts/hlp-font-ultrablack.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'hlp-font-oblique';
+	src: local('hlp-font-oblique'), url(../fonts/hlp-font-oblique.woff) format('woff');
+}

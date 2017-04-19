@@ -4,15 +4,28 @@ body, html {
 
 .main-home {
 	height: 100%;
+	cursor: default;
 }
 
 .main-home-image {
 	position: fixed;
 	width: 3000px;
 	height: 2000px;
-	background-image: url('../images/1_Front.jpg');
 	background-size: cover;
-	animation: panning 10s infinite linear;
+	animation: panning 32s infinite linear;
+	transition: background-image 0.5s ease-in-out; 
+}
+
+.first-image {
+	background-image: url('../images/1_Front.jpg');
+}
+
+.second-image {
+	background-image: url('../images/4_Living_Room.jpg');
+}
+
+.third-image {
+	background-image: url('../images/8_Dining_Room.jpg');
 }
 
 @keyframes panning {
@@ -20,8 +33,20 @@ body, html {
 		transform: translate3d(-300px, -600px, 0);
 		animation-timing-function: ease-in;
 	}
+	25% {
+		transform: scale3d(0.95, 0.95, 0.95) translate3d(-400px, -400px, 0);
+		animation-timing-function: ease-in;
+	}
+	50% {
+		transform: translate3d(-300px, -600px, 0) scale3d(0.95, 0.95, 0.95);
+		animation-timing-function: ease-in;
+	}
+	75% {
+		transform: scale3d(0.95, 0.95, 0.95) translate3d(-400px, -400px, 0);
+		animation-timing-function: ease-in;
+	}
 	100% {
-		transform: scale3d(0.8, 0.8, 0.8) translate3d(-600px, -400px, 0);
+		transform: scale3d(0.95, 0.95, 0.95) translate3d(-300px, -600px, 0);
 		animation-timing-function: ease-in;
 	}
 }
@@ -74,8 +99,9 @@ body, html {
 }
 
 .home-logo-div {
-	width: 400px;
+	width: 830px;
 	background-color: rgba(0,0,0,0.7);
+	cursor: default;
 }
 
 .home-logo-div h1 {
@@ -126,14 +152,25 @@ body, html {
 	align-items: left;
 }
 
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .main-body {
 	display: inline-block;
 	float: left;
-	width: 612px;
+	width: 640px;
 	text-align: left;
 	line-height: 1.2;
 	margin-top: 100px;
 	background-color: rgba(0,0,0,0.7);
+	animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 .main-body h2 {
@@ -144,8 +181,21 @@ body, html {
 	padding: 20px;
 }
 
+@keyframes slideInFromLeftDelayed {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+  	transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .main-body-button-div {
 	padding-top: 20px;
+	animation: 2s ease-out 0s 1 slideInFromLeftDelayed;
 }
 
 .main-body-button-div button {
@@ -157,6 +207,11 @@ body, html {
     border-radius: 5px;
     padding: 10px;
     margin-left: 20px;
+}
+
+button a {
+	color: white;
+	text-decoration: none;
 }
 
 .main-body-button-div button:hover {

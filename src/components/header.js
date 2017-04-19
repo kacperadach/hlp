@@ -1,23 +1,19 @@
 import React from 'react';
-import camera from '../images/camera.png';
-import logo from '../images/homelistingphotography.PNG';
-
+import { Link } from 'react-router-dom';
 
 const Header = React.createClass({
-
 	render() {
 		return (
-			<div className="App-header">
-				<div className="app-header-div">
-					<div className="camera-logo-div">
-	         <img src={camera} className="camera-logo" alt="logo" />
-	        </div>
-	        <div className="hlp-logo-div">
-	         <img src={logo} className="hlp-logo" alt="hlp-logo"/>
-	         test
-	        </div>
-	      </div>
-       </div>
+			<div className="main-top-container">
+				<div className="home-logo-div">
+					<h1>Home Listing Photography</h1>
+				</div>
+				<div className="home-menu-div">
+					<button><Link to="/">Home</Link></button>
+					<button><Link to="/gallery">Gallery</Link></button>
+					<button><Link to="/contact">Contact</Link></button>
+				</div>	
+			</div>
 		);
 	}
 });

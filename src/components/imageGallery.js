@@ -3,66 +3,53 @@ import Lightroom from 'react-images';
 import FrontHouse from '../images/1_Front.jpg';
 import LivingRoom from '../images/4_Living_Room.jpg';
 import DiningRoom from '../images/8_Dining_Room.jpg';
+import ImageGallery from 'react-image-gallery';
+import "react-image-gallery/styles/css/image-gallery.css";
+import '../css/gallery.css';
+
+import Header from './header';
 
 const link = 'http://www.homelistingphotography.com/wp-content/uploads/2012/07/2-front.jpg';
 
 const imageArray = [FrontHouse, LivingRoom, DiningRoom];
 
+const createItems = (items) => {
+	return items.map((i) => {
+		return {
+			original: i,
+			thumbnail: i
+		}
+	});
+};
+
 const imageRotationInterval = 5000;
 
-const ImageGallery = React.createClass({
+const Gallery = React.createClass({
 
 	getInitialState() {
 		return {
 			lightroomOpen: false,
-			currentImage: 0,
-			previousImage: imageArray.length-1
 		};
 	},
 
-	changeImage() {
-		if (this.state.currentImage === imageArray.length - 1) {
-			this.setState({currentImage: 0, previousImage: imageArray.length-1});
-		} else {
-			this.setState({currentImage: this.state.currentImage+1, previousImage: this.state.currentImage});
-		}
-		setTimeout(this.changeImage, imageRotationInterval);
-	},
-
-	componentWillMount() {
-		setTimeout(this.changeImage, imageRotationInterval);
-	},
 
 	openLightRoom() {
 		this.setState({lightroomOpen: true});
 	},
 
 	render() {
-
-		const {
-			lightroomOpen,
-			currentImage,
-			previousImage
-		} = this.state;
-
 		return (
-			<div className="main-div">
-				<div className="main-images">
-					<div className="image-container">
-						{imageArray.map((i, key) => {
-							let cn = "home-main-photo";
-							if (key !== currentImage) {
-								cn += " hidden"
-							}
-							return (
-								<img key={key} src={i} className={cn} onClick={this.openLightRoom} />
-							);
-						})}
+			<div className="main-home-container">
+				<Header />
+				<div className="image-gallery-div">
+					<div className="image-gallery-header">
+						<p>Pictures taken and developed by Home Listing Photography</p>
 					</div>
+					<ImageGallery items={createItems(imageArray)}/>
 				</div>
 			</div>
 		);
 	}
 });
 
-export default ImageGallery;
+export default Gallery;
