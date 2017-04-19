@@ -123,7 +123,7 @@ body, html {
 .home-menu-div {
 	padding: 20px;
 	margin-right: 10%;
-	height: 35px;
+	height: 80px;
 	background-color: rgba(0,0,0,0.7);
 }
 
@@ -134,6 +134,35 @@ body, html {
 	font-size: 30px;
 	color: white;
 }
+
+button a {
+	color: white;
+}
+
+button a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+button a:focus {
+	text-decoration: none;
+	color: white;
+}
+
+.home-menu-div button a {
+	color: white;
+}
+
+.home-menu-div button a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.home-menu-div button a:focus {
+	text-decoration: none;
+	color: white;
+}
+
 
 .home-menu-div button:hover {
 	cursor: pointer;

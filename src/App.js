@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/header';
 import Gallery from './components/imageGallery';
 import Home from './components/home';
+import Services from './components/services';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
@@ -13,6 +13,7 @@ class App extends Component {
 	  		<div>
 		  		<Route exact path="/" component={Home}/>
 		  		<Route path="/gallery" component={Gallery}/>
+		  		<Route path="/services" component={Services}/>
 		  	</div>
 	  	</Router>
     );

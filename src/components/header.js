@@ -11,6 +11,7 @@ const Header = React.createClass({
 				<div className="home-menu-div">
 					<button><Link to="/">Home</Link></button>
 					<button><Link to="/gallery">Gallery</Link></button>
+					<button><Link to="/services">Services</Link></button>
 					<button><Link to="/contact">Contact</Link></button>
 				</div>	
 			</div>
