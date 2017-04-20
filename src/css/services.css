@@ -24,17 +24,17 @@
 	text-align: center;
 	cursor: default;
 	display: inline;
-	animation: 5s ease-out 0s 1 slideInFromBottom;
+	/*animation: 5s ease-out 0s 1 slideInFromBottom;*/
 }
 
-@keyframes slideInFromBottom {
+/*@keyframes slideInFromBottom {
   0% {
     transform: translateY(100%);
   }
   100% {
     transform: translateY(0);
   }
-}
+}*/
 
 .service {
 	width: 600px;
@@ -59,6 +59,10 @@
 	background-color: black;
 }
 
+.service-background.hideService {
+	visibility: hidden;
+}
+
 .main-services-div a {
 	text-decoration: none;
 }
@@ -72,6 +76,118 @@
     text-decoration: none;
 }
 
+.first-column.hideCol {
+	display: hidden;
+}
+
+.second-column.hideCol {
+	visibility: hidden;
+}
+
+
+.spotlight {
+	position: relative;
+	height: 1000px;
+	width: 1500px;
+	transition: width 1.5s, height 1.5s;
+	transition-delay: 0.5s;
+	justify-content: space-between;
+	align-items: initial;
+}
+
+@keyframes slideToTheLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(320px);
+  }
+}
+
+@keyframes slideToTheRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-320px);
+  }
+}
+
+@keyframes slideToTheTopFromTheLeft {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translate(320px, -440px);
+	}
+}
+
+@keyframes slideToTheTopFromTheRight {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translate(-320px, -440px);
+	}
+}
+
+.first-column .spotlight {
+	animation: 0.5s ease-out 0s 1 slideToTheLeft;
+	transform: translateX(320px);
+}
+
+.second-column .spotlight {
+	animation: 0.5s ease-out 0s 1 slideToTheRight;
+	transform: translateX(-320px);
+}
+
+.first-column .service-bottom.spotlight {
+	animation: 0.5s ease-out 0s 1 slideToTheTopFromTheLeft;
+	transform: translate(320px, -440px);
+}
+
+.second-column .service-bottom.spotlight {
+	animation: 0.5s ease-out 0s 1 slideToTheTopFromTheRight;
+	transform: translate(-320px, -440px);
+}
+
+@keyframes delayAppearance {
+	0% {
+		opacity: 0;
+	}
+	75% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.service-spotlight-main {
+	width: 100%;
+	font-family: "hlp-font";
+	color: white;
+	font-size: 24px;
+	padding: 40px;
+}
+
+.service-spotlight-header {
+	font-size: 50px;
+	/*text-align: center;*/
+	animation: 1.5s ease-out 0s 1 delayAppearance;
+}
+
+.service-spotlight-body {
+	animation: 2.2s ease-out 0s 1 delayAppearance;
+}
+
+.service-background.spotlight p {
+	display: none;
+}
+
+.service-background.spotlight .service {
+	display: none;
+}
 
 .service.photography {
 	background-image: url('../images/8_Dining_Room.jpg');
@@ -95,17 +211,6 @@
 }
 
 
-#left-tabs {
-	width: 1500px;
-}
-
-#left-tabs li {
-	line-height: 2;
-}
-
-
-#left-tabs li p {
-	display: inline;
-	margin-left: 20px;
-	font-size: 24px;
+.spotlight .service {
+	background-image: none;
 }

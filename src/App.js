@@ -4,6 +4,7 @@ import Gallery from './components/imageGallery';
 import Home from './components/home';
 import Services from './components/services';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Photography from './components/photography';
 
 class App extends Component {
 
